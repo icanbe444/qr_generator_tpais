@@ -6,19 +6,41 @@
     <link rel="stylesheet" href="css/style.css">
 </head>
 
+
+    <title>Signup</title>
+    <style>
+        /* Add your styling here */
+    </style>
+</head>
 <body>
-    <h1>Sign Up</h1>
+    <h1>Signup</h1>
     <div id="form-wrapper">
-        <form id="signupForm">
-            <input type="text" id="username" name="username" placeholder="Username" required>
-            <input type="password" id="password" name="password" placeholder="Password" required>
-            <button id="signupBtn">Sign Up</button>
+        <form id="signupForm" action="signup.php" method="POST" onsubmit="return validateSignupForm()">
+            <input type="text" id="username" name="username" placeholder="Username" required><br>
+            <input type="password" id="password" name="password" placeholder="Password" required><br>
+            <input type="password" id="confirmPassword" name="confirmPassword" placeholder="Confirm Password" required><br>
+            <button type="submit" id="signupBtn">Sign Up</button>
         </form>
         <div id="alert"></div>
-        <p>Already have an account? <a href="login.html">Login here</a></p>
+        <p>You have an account? <a href="login.html">Login up here</a></p>
     </div>
+    </div>
+    
+    
+    <div id="alert"></div>
+    <script>
+        function validateSignupForm() {
+            const password = document.getElementById('password').value;
+            const confirmPassword = document.getElementById('confirmPassword').value;
+            const alertDiv = document.getElementById('alert');
 
-    <script src="js/script.js"></script>
+            if (password !== confirmPassword) {
+                alertDiv.innerText = "Passwords do not match!";
+                return false;  // Prevent form submission
+            }
+
+            return true;
+        }
+    </script>
 </body>
-
 </html>
