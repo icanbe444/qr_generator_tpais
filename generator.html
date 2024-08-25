@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>QR-Code Generator</title>
+    <link rel="stylesheet" href="css/style.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+</head>
+
+<body>
+    <h1>QR-Code Generator</h1>
+    <div id="form-wrapper">
+        <form id="generator">
+            <label for="codeSize">Select QR Size:</label>
+            <select id="codeSize" name="codeSize">
+                <option value="75">Mini</option>
+                <option value="155">Small</option>
+                <option value="186">Medium</option>
+                <option value="248" selected="selected">Large</option>
+                <option value="300">XL</option>
+                <option value="450">XXL</option>
+            </select>
+            <input type="text" id="codeData" name="codeData" placeholder="Enter a url or text" autocomplete="off">
+            <button id="generate">Generate</button>
+        </form>
+        <div id="alert"></div>
+    </div>
+    <div id="image">Image will show here</div>
+    <div id="link"></div>
+    <div id="code"></div>
+
+    <script src="js/script.js"></script>
+</body>
+
+</html>
